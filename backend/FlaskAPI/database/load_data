@@ -1,0 +1,44 @@
+create table customer ( email string primary key, balance float, first_name string, last_name string, gender string, image string, ip_address string);
+insert into customer(email, balance,first_name, last_name, gender, image, ip_address) values ("sclutterham0@123-reg.co.uk",7454.6,"Sully","Clutterham","Male","https://robohash.org/similiquemodiautem.bmp?size=50x50&set=set1","158.0.165.138");
+insert into customer(email, balance,first_name, last_name, gender, image, ip_address) values ("mevason1@usatoday.com",3561.6,"Mateo","Evason","Male","https://robohash.org/molestiaeadquia.bmp?size=50x50&set=set1","68.147.207.137");
+insert into customer(email, balance,first_name, last_name, gender, image, ip_address) values ("lgardener2@wordpress.org",4456.3,"Lira","Gardener","Female","https://robohash.org/laboredolorumvelit.jpg?size=50x50&set=set1","96.85.6.31");
+insert into customer(email, balance,first_name, last_name, gender, image, ip_address) values ("edunckley3@instagram.com",5938,"Edward","Dunckley","Male","https://robohash.org/ullamquaedeleniti.png?size=50x50&set=set1","233.189.117.212");
+insert into customer(email, balance,first_name, last_name, gender, image, ip_address) values ("gsouza4@squidoo.com",4241.6,"Gwynne","Souza","Female","https://robohash.org/possimusrepellendusodio.png?size=50x50&set=set1","164.226.80.40");
+insert into customer(email, balance,first_name, last_name, gender, image, ip_address) values ("cdykes6@china.com.cn",3159.2,"Christian","Dykes","Male","https://robohash.org/iustoillumsit.png?size=50x50&set=set1","192.214.177.38");
+insert into customer(email, balance,first_name, last_name, gender, image, ip_address) values ("sklagge7@dell.com",1471,"Sada","Klagge","Female","https://robohash.org/exveniama.jpg?size=50x50&set=set1","143.193.248.153");
+insert into customer(email, balance,first_name, last_name, gender, image, ip_address) values ("glewerenz8@europa.e",9969.7,"Genia","Lewerenz","Female","https://robohash.org/similiquemodiautem.bmp?size=50x50&set=set1","104.0.250.224");
+insert into customer(email, balance,first_name, last_name, gender, image, ip_address) values ("ddemarchi9@taobao.com",7253.5,"Daloris","De Marchi","Female","https://robohash.org/uteaquearchitecto.jpg?size=50x50&set=set1","124.166.67.100");
+insert into customer(email, balance,first_name, last_name, gender, image, ip_address) values ("jeremperez@isban.co.uk",11454.6,"Jeremias","Perez","Male","https://robohash.org/similiquemodiautem.bmp?size=50x50&set=set1","138.30.15.199");
+
+create table customer ( email string primary key, balance float, first_name string, last_name string, gender string, image string, ip_address string);
+
+######MMF TABLES
+
+
+## PROJECT
+
+create table project_declarations( id_project string primary key, name_project string, desc_project string, path_project string, id_responsible number,
+name_responsible string, open_date string, close_date string, is_active boolean);
+
+insert into project_declarations(id_project, name_project,desc_project, path_project, id_responsible, name_responsible, open_date, close_date, is_active)
+        values ("PROJECT01","PROJECT 1","First Model Project in the MMF prototype","/MMF/Projects/Dummy/1/",1,"Madan","13-Nov-2017","13-Dec-2017","true");
+
+insert into project_declarations(id_project, name_project,desc_project, path_project, id_responsible, name_responsible, open_date, close_date, is_active)
+        values ("PROJECT02","PROJECT 2","Second Model Project in the MMF prototype","/MMF/Projects/Dummy/2/",2,"Pranay","14-Nov-2017","31-Dec-2017","false");
+insert into project_declarations(id_project, name_project,desc_project, path_project, id_responsible, name_responsible, open_date, close_date, is_active)
+        values ("PROJECT03","PROJECT 3","Third Model Project in the MMF prototype","/MMF/Projects/Dummy/3/",3,"Sergio","30-Nov-2017","1-Jan-2018","false");
+insert into project_declarations(id_project, name_project,desc_project, path_project, id_responsible, name_responsible, open_date, close_date, is_active)
+        values ("PROJECT04","PROJECT 4","Fourth Model Project in the MMF prototype","/MMF/Projects/Dummy/4/",1,"Madan","1-Jul-2017","27-Nov-2017","true");
+
+
+
+insert into project_declarations (id_project, name_project, desc_project, path_project, id_responsible, name_responsible, open_date, close_date, is_active)
+        VALUES ('az','f','f','f','1','Pranay','fv','f','True')
+
+
+## MODEL
+
+create table model_declarations (id_project string, id_model string primary key, algorithm_model string, name_model string, desc_model string, path_model string , id_responsible_model number,
+name_responsible_model string , open_date_model string , close_date_model string, is_active_model string);
+
+

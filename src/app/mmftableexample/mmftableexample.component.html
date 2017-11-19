@@ -1,0 +1,71 @@
+<td-layout-nav color="accent">
+    <button md-icon-button td-menu-button tdLayoutToggle>
+        <md-icon>menu</md-icon>
+    </button>
+    <div td-toolbar-content layout="row" layout-align="start center" flex>
+      <span>Model Factory Framework</span>
+      <span flex></span>
+      <a md-icon-button mdTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><md-icon>chrome_reader_mode</md-icon></a>
+      <a md-icon-button mdTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><md-icon svgIcon="assets:github"></md-icon></a>
+    </div>
+    <div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
+      <div flex-gt-sm="100">
+         <md-card>
+            <md-card-title>First Table Example</md-card-title>
+            <md-divider></md-divider>
+            <md-card-content>
+                <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm">
+                    <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
+                      <span class="md-title">My first table</span>
+                    </span>
+                    <!--<span *ngIf="!searchBox.searchVisible" class="push-left-sm">
+                      <span *ngIf="(selectable && !selectedRows.length) || !selectable" class="md-title"></span>
+                      <span *ngIf="selectedRows.length && selectable" class="md-body-1">0 item(s) selected</span>
+                    </span>-->
+                    <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm" placeholder="Search here" (searchDebounce)="search($event)" flex>
+                    </td-search-box>
+                  </div>
+                  <md-divider></md-divider>
+                  <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
+                      <span class="md-title">My first table</span>
+                    </span>
+                  <md-divider></md-divider>
+                  <div [hidden]="!flag">
+                  <md-card style="height:300px;overflow-y:scroll" >
+                    <td-data-table
+                      #dataViewtable
+                      [data]="dataView"
+                      [columns]="dataColumn"
+                      [selectable]="true"
+                      [clickable]="true"
+                      [multiple]="true"
+                      [sortable]="true"
+                      [sortBy]="first_name"
+                      [sortOrder]="sortOrder"
+                      (sortChange)="sort($event)">
+                    </td-data-table>   
+                  </md-card>
+                  <div class="md-padding" *ngIf="!dataViewtable.hasData" layout="row" layout-align="center center">
+                      <h3>No results to display.</h3>
+                  </div>
+                </div>
+                <td-paging-bar #pagingBar pageSize="pageSize" [total]="filteredTotal" (change)="page($event)">
+                    <span hide-xs>rows per page.</span>
+                      <!--<md-select [style.width.px]="50" [(ngModel)]="pageSize">
+                        <md-option *ngFor="let size of [50,100,200,500]" [value]="size">
+                          {{size}}
+                        </md-option>
+                        [(ngModel)]="selectedRows" // Temp place
+                      </md-select>-->
+                    <span>{{pagingBar.range}}</span> <span hide-xs>of {{pagingBar.total}}</span>
+                  </td-paging-bar>
+          </md-card-content>
+         </md-card>
+      </div>
+    </div>
+    <td-layout-footer>
+      <div layout="row" layout-align="start center">
+        <span class="md-caption">Copyright &copy; 2017 Teradata. All rights reserved</span>
+      </div>
+    </td-layout-footer>
+  </td-layout-nav>

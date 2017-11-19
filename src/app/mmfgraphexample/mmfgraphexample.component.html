@@ -1,0 +1,120 @@
+<td-layout-nav color="accent">
+    <button md-icon-button td-menu-button tdLayoutToggle>
+        <md-icon>menu</md-icon>
+    </button>
+    <div td-toolbar-content layout="row" layout-align="start center" flex>
+      <span>Model Factory Framework</span>
+      <span flex></span>
+      <a md-icon-button mdTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><md-icon>chrome_reader_mode</md-icon></a>
+      <a md-icon-button mdTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><md-icon svgIcon="assets:github"></md-icon></a>
+    </div>
+    <div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
+        <div flex-gt-sm="60">
+          <md-card>
+            <md-card-title>Goal of this Covalent App</md-card-title>
+            <md-card-subtitle>The goal of this App is to manage models based on binary variables such as: Logistic, Decision trees, Random Forest...</md-card-subtitle>
+            <md-divider></md-divider>
+            <md-card-content>
+                <div style="height:250px;">
+                    <ngx-charts-gauge
+                      [scheme]="colorScheme"
+                      [results]="single"
+                      [min]="0"
+                      [max]="100"
+                      [units]="'usage'"
+                      [bigSegments]="10"
+                      [smallSegments]="5">
+                      <!--[valueFormdting]="axisDigits">-->
+                    </ngx-charts-gauge>
+                  </div>
+            </md-card-content>
+          </md-card>
+          <md-card>
+            <md-card-title>Model Validation Workflow</md-card-title>
+            <md-card-subtitle>A simple workflow is associated with this app. Given the Python flexibility, this app will be able to adapted to more complex woprkflows.</md-card-subtitle>
+            <md-divider></md-divider>
+            <md-card-content>
+                <div style="height:250px;">
+                    <ngx-charts-bar-horizontal-stacked
+                      [scheme]="colorScheme"
+                      [results]="multi"
+                      [gradient]="gradient"
+                      [xAxis]="showXAxis"
+                      [yAxis]="showYAxis"
+                      [legend]="showLegend"
+                      [showXAxisLabel]="showXAxisLabel"
+                      [showYAxisLabel]="showYAxisLabel"
+                      [xAxisLabel]="xAxisLabel">
+                      <!--[xAxisTickFormdting]="axisDigits">-->
+                    </ngx-charts-bar-horizontal-stacked>
+                  </div>
+            </md-card-content>
+          </md-card>
+        </div>
+        <div flex-gt-sm="40">
+          <md-card>
+            <md-card-title>Model Factory Framework</md-card-title>
+            <md-card-subtitle>Under this framework, it will be identified which are the building blocks of a model when this is built. Furthermoire, it will be key the storage about who and when regarding a specific model. Security matters will be added to ensure fiability of register which declared responsabilities to different users.</md-card-subtitle>
+            <md-divider></md-divider>
+            <md-card-content>
+                <div style="height:250px;">
+                    <ngx-charts-bar-vertical-2d
+                      [scheme]="colorScheme"
+                      [results]="multi"
+                      [gradient]="gradient"
+                      [xAxis]="showXAxis"
+                      [yAxis]="showYAxis"
+                      [legend]="showLegend"
+                      [showXAxisLabel]="showXAxisLabel"
+                      [showYAxisLabel]="showYAxisLabel"
+                      [xAxisLabel]="xAxisLabel"
+                      [yAxisLabel]="yAxisLabel"
+                      [barPadding]="2"
+                      [groupPadding]="8">
+                      <!--[yAxisTickFormdting]="axisDigits"-->
+                    </ngx-charts-bar-vertical-2d>
+                  </div>
+            </md-card-content>
+            <md-divider></md-divider>
+            <md-card-actions>
+              <a md-button color="accent" class="text-upper">
+                <span>View More</span>
+              </a>
+            </md-card-actions>
+          </md-card>
+          <md-card>
+            <md-card-title>Reporting</md-card-title>
+            <md-card-subtitle>Each managed model has its own reporting about: current status, validation workflow. In addition general reporting is available about how many models have been declared, which of them are campions or challeger...</md-card-subtitle>
+            <md-divider></md-divider>
+            <md-card-content>
+                <div style="height:250px;">
+                    <ngx-charts-line-chart
+                      [scheme]="colorScheme"
+                      [results]="multi"
+                      [gradient]="gradient"
+                      [xAxis]="showXAxis"
+                      [yAxis]="showYAxis"
+                      [legend]="showLegend"
+                      [showXAxisLabel]="showXAxisLabel"
+                      [showYAxisLabel]="showYAxisLabel"
+                      [xAxisLabel]="xAxisLabel"
+                      [yAxisLabel]="yAxisLabel"
+                      [autoScale]="autoScale">
+                      <!--[yAxisTickFormdting]="axisDigits">-->
+                    </ngx-charts-line-chart>
+                  </div>
+            </md-card-content>
+            <md-card-actions>
+              <a md-button color="accent" class="text-upper" [routerLink]="['/product']">
+                <span>View More</span>
+              </a>
+            </md-card-actions>
+          </md-card>
+        </div>
+     </div>
+    <td-layout-footer>
+      <div layout="row" layout-align="start center">
+        <span class="md-caption">Copyright &copy; 2017 Teradata. All rights reserved</span>
+      </div>
+    </td-layout-footer>
+  </td-layout-nav>
